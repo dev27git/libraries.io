@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_logo">60sp</dimen>
+    <dimen name="splash_margin_top">100dp</dimen>
+    <dimen name="progress_splash_margin_bottom">100dp</dimen>
+    <dimen name="progress_bar_size">30dp</dimen>
+    <dimen name="card_margin">2dp</dimen>
+    <dimen name="platform_name_padding">5dp</dimen>
+    <dimen name="platform_text_size">20sp</dimen>
+    <dimen name="other_text_size">15sp</dimen>
+    <dimen name="text_margin_top_bottom">2dp</dimen>
+    <dimen name="home_link_size">12sp</dimen>
+</resources>
