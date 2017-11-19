@@ -44,7 +44,7 @@ public class PlatformsAdapter extends RecyclerView.Adapter<PlatformsAdapter.Plat
 		holder.tvPlatforms.setText(platformsList.get(position).getName());
 		holder.tvPlatforms.setBackgroundColor(Color.parseColor(platformsList.get(position).getColor()));
 		holder.tvDefaultLanguage.setText(
-				Html.fromHtml("default language : "
+				Html.fromHtml("default language : <br>"
 						+ "<font color='" + platformsList.get(position).getColor() + "'>"
 						+ platformsList.get(position).getDefaultLanguage()
 						+ "</font>"
@@ -53,7 +53,13 @@ public class PlatformsAdapter extends RecyclerView.Adapter<PlatformsAdapter.Plat
 
 		holder.tvHomeLink.setText(platformsList.get(position).getHomePage());
 		holder.tvHomeLink.setTextColor(Color.parseColor(platformsList.get(position).getColor()));
-		holder.tvProjectsCount.setText(platformsList.get(position).getProjectsCount());
+		holder.tvProjectsCount.setText(
+				Html.fromHtml("Projects : <br>"
+						+ "<font color='" + platformsList.get(position).getColor() + "'>"
+						+ platformsList.get(position).getProjectsCount()
+						+ "</font>"
+				)
+		);
 	}
 
 	@Override

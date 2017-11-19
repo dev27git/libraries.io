@@ -7,7 +7,8 @@
         android:id="@+id/progressBar"
         android:layout_width="@dimen/progress_bar_size"
         android:layout_height="@dimen/progress_bar_size"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/text_margin_top_bottom"/>
 
     <com.dev.rahul.librariesio.utility.widgets.text_view.RegularTextView
         android:id="@+id/tvProgressText"
@@ -16,5 +17,6 @@
         android:layout_below="@id/progressBar"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
+        android:padding="@dimen/text_margin_top_bottom"
         android:text="@string/loading"/>
 </RelativeLayout>

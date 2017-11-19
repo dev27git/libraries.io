@@ -1,5 +1,9 @@
 package com.dev.rahul.librariesio.utility.credentials;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Created by rahul on 22/10/17.
  */
@@ -59,8 +63,8 @@ public class API {
 	 * Project Search
 	 * Search for projects
 	 */
-	public static String search(String query) {
-		return MAIN_URL + "search" + "?" + "q=" + query + "&" + API_KEY + "=" + Libraries.API_KEY;
+	public static String search(HashMap<String,String> params) {
+		return MAIN_URL + "search" + "?" + API_KEY + "=" + Libraries.API_KEY + getQueryParameters(params);
 	}
 
 	/**
@@ -154,5 +158,16 @@ public class API {
 	 */
 	public static String unsubscribeFromProject(String platform, String name) {
 		return MAIN_URL + "subscriptions" + "/" + platform + "/" + name + "?" + API_KEY + "=" + Libraries.API_KEY;
+	}
+
+	public static String getQueryParameters(HashMap<String,String> params) {
+
+		Set<Map.Entry<String, String>> entrySet = params.entrySet();
+
+		StringBuilder queryStrings = new StringBuilder();
+		for (Map.Entry entry : entrySet) {
+			queryStrings.append("&" + entry.getKey() + "=" + entry.getValue());
+		}
+		return queryStrings.toString();
 	}
 }

@@ -1,16 +1,19 @@
 package com.dev.rahul.librariesio.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.dev.rahul.librariesio.R;
 import com.dev.rahul.librariesio.adapter.PlatformsAdapter;
 import com.dev.rahul.librariesio.model.Platforms;
+import com.dev.rahul.librariesio.ui.about.AboutActivity;
 import com.dev.rahul.librariesio.utility.helper.CrossFadeAnim;
 
 import java.util.List;
@@ -34,12 +37,25 @@ public class HomeActivity extends AppCompatActivity implements IHomeView {
 		ButterKnife.bind(this);
 
 		GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
-		StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-		recyclerPlatforms.setLayoutManager(staggeredGridLayoutManager);
+		recyclerPlatforms.setLayoutManager(gridLayoutManager);
 		recyclerPlatforms.setHasFixedSize(true);
 
 		homePresenter = new HomePresenter(this);
 		homePresenter.loadPlatforms();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu_home,menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.item_about) {
+			startActivity(new Intent(this, AboutActivity.class));
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override

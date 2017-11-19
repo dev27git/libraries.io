@@ -46,21 +46,34 @@
                 android:paddingLeft="@dimen/platform_name_padding"
                 android:layout_marginTop="@dimen/text_margin_top_bottom"/>
 
-            <com.dev.rahul.librariesio.utility.widgets.text_view.RegularTextView
-                android:id="@+id/tvHomeLink"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_link"
-                android:gravity="center_vertical"
-                android:shadowColor="@android:color/black"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
-                android:maxLines="2"
-                android:textSize="@dimen/home_link_size"
-                android:layout_marginBottom="@dimen/text_margin_top_bottom"
+                android:orientation="horizontal"
+                android:gravity="top"
                 android:paddingLeft="@dimen/platform_name_padding"
-                android:layout_marginTop="@dimen/text_margin_top_bottom"/>
+                android:layout_marginTop="@dimen/text_margin_top_bottom">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="@dimen/platform_link_icon_size"
+                    android:layout_height="@dimen/platform_link_icon_size"
+                    app:srcCompat="@drawable/ic_link"
+                    android:layout_marginRight="@dimen/text_margin_top_bottom"/>
+
+                <com.dev.rahul.librariesio.utility.widgets.text_view.RegularTextView
+                    android:id="@+id/tvHomeLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@android:color/black"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:textSize="@dimen/home_link_size"
+                    android:layout_marginBottom="@dimen/text_margin_top_bottom"
+                    android:paddingLeft="@dimen/platform_name_padding"/>
+            </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
